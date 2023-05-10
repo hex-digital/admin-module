@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-use HexDigital\Skeleton\Tests\TestCase;
+use HexDigital\ApiConsoleModule\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

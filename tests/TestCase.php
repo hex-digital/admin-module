@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\Skeleton\Tests;
+namespace HexDigital\ApiConsoleModule\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use HexDigital\Skeleton\SkeletonServiceProvider;
+use HexDigital\ApiConsoleModule\ApiConsoleModuleServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
     protected function getPackageProviders($app): array
     {
         return [
-            SkeletonServiceProvider::class,
+            ApiConsoleModuleServiceProvider::class,
         ];
     }
 }

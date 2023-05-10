@@ -1,17 +1,10 @@
-# :package_name
+# api-console-module
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/hex-digital/:package_slug.svg?style=flat-square)](https://packagist.org/packages/hex-digital/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/:package_slug/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hex-digital/:package_slug/actions/workflows/tests.yaml?query=branch:main)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/:package_slug/coding-standards.yml?label=code%20style&style=flat-square)](https://github.com/hex-digital/:package_slug/actions/workflows/coding-standards.yml?query=branch:main)
-[![Total Downloads](https://img.shields.io/packagist/dt/hex-digital/:package_slug.svg?style=flat-square)](https://packagist.org/packages/hex-digital/:package_slug)
-<!--delete-->
----
-This repo can be used to scaffold a Hex Digital Laravel package. Follow these steps to get started:
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/hex-digital/api-console-module.svg?style=flat-square)](https://packagist.org/packages/hex-digital/api-console-module)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/api-console-module/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hex-digital/api-console-module/actions/workflows/tests.yaml?query=branch:main)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/api-console-module/coding-standards.yml?label=code%20style&style=flat-square)](https://github.com/hex-digital/api-console-module/actions/workflows/coding-standards.yml?query=branch:main)
+[![Total Downloads](https://img.shields.io/packagist/dt/hex-digital/api-console-module.svg?style=flat-square)](https://packagist.org/packages/hex-digital/api-console-module)
 
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
----
-<!--/delete-->
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
 ## Installation
@@ -19,26 +12,26 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require hex-digital/:package_slug
+composer require hex-digital/api-console-module
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
+php artisan vendor:publish --tag="api-console-module-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-config"
+php artisan vendor:publish --tag="api-console-module-config"
 ```
 
 ## Usage
 
 ```php
-$variable = new HexDigital\Skeleton();
+$variable = new HexDigital\ApiConsoleModule();
 echo $variable->echoPhrase('Hello, Hex Digital!');
 ```
 
@@ -63,7 +56,7 @@ will be promptly addressed.
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Ben Sherred](https://github.com/bensherred)
 - [All Contributors](../../contributors)
 
 ## License
