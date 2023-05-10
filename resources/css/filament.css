@@ -1,0 +1,62 @@
+@import '../../vendor/filament/filament/resources/css/app.css';
+
+.filament-sidebar {
+    box-shadow: none !important;
+    @apply bg-gray-800;
+}
+
+.filament-sidebar-header {
+    @apply border-0 bg-gray-900 text-white;
+}
+
+.filament-sidebar-collapse-button,
+.filament-sidebar-close-button {
+    @apply text-white;
+}
+
+.filament-main-topbar  {
+    @apply border-0 shadow;
+}
+
+.filament-sidebar-nav {
+    @apply py-4;
+}
+
+.filament-sidebar-nav > ul {
+    @apply px-5 space-y-8;
+}
+
+.filament-sidebar-group + li:nth-child(even) div {
+    @apply hidden;
+}
+
+.filament-sidebar-group p {
+    @apply text-gray-200;
+}
+
+.filament-sidebar-item {
+    @apply text-white;
+}
+.filament-sidebar-item svg {
+    @apply text-gray-400 w-6 h-6 stroke-[1.5];
+}
+
+.filament-sidebar-item-active a {
+    @apply bg-gray-900 text-white hover:bg-gray-700;
+}
+
+h1.filament-header-heading {
+    @apply md:text-2xl;
+}
+
+.filament-tables-container {
+    @apply text-sm;
+}
+
+.filament-button {
+    @apply focus:!ring-0;
+}
+
+.filament-login-page form::before {
+    @apply hidden;
+}

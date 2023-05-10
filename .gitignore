@@ -6,6 +6,9 @@
 /.idea
 /.vscode
 
+# exclude node module files
+/node_modules
+
 # exclude composer files
 /vendor
 
