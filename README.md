@@ -1,4 +1,4 @@
-# api-console-module
+# API Console Module
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/hex-digital/api-console-module.svg?style=flat-square)](https://packagist.org/packages/hex-digital/api-console-module)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/api-console-module/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hex-digital/api-console-module/actions/workflows/tests.yaml?query=branch:main)
