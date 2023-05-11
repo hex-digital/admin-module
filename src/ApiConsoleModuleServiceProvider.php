@@ -9,8 +9,6 @@ use Filament\PluginServiceProvider;
 use HexDigital\ApiConsoleModule\Actions\RefactorFileAction;
 use HexDigital\ApiConsoleModule\Commands\MakeUserCommand;
 use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as MakeUserCommandAlias;
-use HexDigital\ApiConsoleModule\Filament\Resources\AdminResource;
-use HexDigital\ApiConsoleModule\Filament\Resources\RoleResource;
 use HexDigital\ApiConsoleModule\Models\Admin;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -71,10 +69,7 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
 
     protected function getResources(): array
     {
-        return [
-            AdminResource::class,
-            RoleResource::class,
-        ];
+        return (array) config(key: 'api-console-module.resources', default: []);
     }
 
     protected function publishDependencies(InstallCommand $command): void
@@ -126,6 +121,7 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
                 "'home_url' => '/'" => "'home_url' => '/' . env('FILAMENT_PATH', 'console')",
                 "'guard' => env('FILAMENT_AUTH_GUARD', 'web')" => "'guard' => env('FILAMENT_AUTH_GUARD', 'console')",
                 "'login' => \Filament\Http\Livewire\Auth\Login::class" => "'login' => \JeffGreco13\FilamentBreezy\Http\Livewire\Auth\Login::class",
+                "'should_show_logo' => true" => "'should_show_logo' => false",
                 "'width' => null" => "'width' => '18rem'",
             ],
         );

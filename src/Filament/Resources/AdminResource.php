@@ -15,8 +15,6 @@ use HexDigital\ApiConsoleModule\Models\Admin;
 
 class AdminResource extends Resource
 {
-    protected static ?string $model = Admin::class;
-
     protected static ?string $navigationIcon = 'heroicon-o-user-add';
 
     public static function form(Form $form): Form
@@ -79,5 +77,27 @@ class AdminResource extends Resource
         return [
             RolesRelationManager::class,
         ];
+    }
+
+    public static function getModel(): string
+    {
+        $model = config(key: 'api-console-module.admins.model', default: Admin::class);
+
+        if (! is_string(value: $model)) {
+            return Admin::class;
+        }
+
+        return $model;
+    }
+
+    protected static function getNavigationGroup(): ?string
+    {
+        $navigationGroup = config(key: 'api-console-module.admins.navigation_group');
+
+        if (! is_string(value: $navigationGroup)) {
+            return null;
+        }
+
+        return $navigationGroup;
     }
 }
