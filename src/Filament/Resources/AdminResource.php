@@ -10,6 +10,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use HexDigital\ApiConsoleModule\Filament\Resources\AdminResource\RelationManagers\RolesRelationManager;
 use HexDigital\ApiConsoleModule\Models\Admin;
 
 class AdminResource extends Resource
@@ -22,21 +23,26 @@ class AdminResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make(name: 'first_name')
-                    ->required()
-                    ->string()
-                    ->maxValue(value: 255),
+                Forms\Components\Card::make(schema: [
+                    Forms\Components\Grid::make()
+                        ->schema(components: [
+                            Forms\Components\TextInput::make(name: 'first_name')
+                                ->required()
+                                ->string()
+                                ->maxValue(value: 255),
 
-                Forms\Components\TextInput::make(name: 'last_name')
-                    ->required()
-                    ->string()
-                    ->maxValue(value: 255),
+                            Forms\Components\TextInput::make(name: 'last_name')
+                                ->required()
+                                ->string()
+                                ->maxValue(value: 255),
 
-                Forms\Components\TextInput::make(name: 'email')
-                    ->required()
-                    ->email()
-                    ->unique(ignoreRecord: true)
-                    ->maxValue(value: 255),
+                            Forms\Components\TextInput::make(name: 'email')
+                                ->required()
+                                ->email()
+                                ->unique(ignoreRecord: true)
+                                ->maxValue(value: 255),
+                        ]),
+                ]),
             ]);
     }
 
@@ -65,6 +71,13 @@ class AdminResource extends Resource
             'index' => Pages\ListAdmins::route('/'),
             'create' => Pages\CreateAdmin::route('/create'),
             'edit' => Pages\EditAdmin::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            RolesRelationManager::class,
         ];
     }
 }
