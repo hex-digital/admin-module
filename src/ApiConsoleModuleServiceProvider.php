@@ -102,14 +102,22 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
                 '--tag' => 'permission-migrations',
             ],
         );
+
+        $command->comment(string: 'Publishing filament breezy config file...');
+        $command->callSilently(
+            command: 'vendor:publish',
+            arguments: [
+                '--tag' => 'filament-breezy-config',
+            ],
+        );
     }
 
     protected function setFilamentDefaults(InstallCommand $command): void
     {
-        $command->comment(string: 'Updating default filament config...');
-
         /** @var RefactorFileAction $refactorFileAction */
         $refactorFileAction = $this->app->make(abstract: RefactorFileAction::class);
+
+        $command->comment(string: 'Updating filament config...');
 
         $refactorFileAction->execute(
             path: config_path('filament.php'),
@@ -117,7 +125,17 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
                 "'path' => env('FILAMENT_PATH', 'admin')" => "'path' => env('FILAMENT_PATH', 'console')",
                 "'home_url' => '/'" => "'home_url' => '/' . env('FILAMENT_PATH', 'console')",
                 "'guard' => env('FILAMENT_AUTH_GUARD', 'web')" => "'guard' => env('FILAMENT_AUTH_GUARD', 'console')",
+                "'login' => \Filament\Http\Livewire\Auth\Login::class" => "'login' => \JeffGreco13\FilamentBreezy\Http\Livewire\Auth\Login::class",
                 "'width' => null" => "'width' => '18rem'",
+            ],
+        );
+
+        $command->comment(string: 'Updating filament breezy config...');
+
+        $refactorFileAction->execute(
+            path: config_path('filament-breezy.php'),
+            refactors: [
+                '"enable_registration" => true' => '"enable_registration" => false',
             ],
         );
     }
