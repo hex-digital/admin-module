@@ -9,15 +9,12 @@ use Filament\PluginServiceProvider;
 use HexDigital\ApiConsoleModule\Commands\MakeUserCommand;
 use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as MakeUserCommandAlias;
 use HexDigital\ApiConsoleModule\Filament\Resources\AdminResource;
+use HexDigital\ApiConsoleModule\Filament\Resources\RoleResource;
 use HexDigital\ApiConsoleModule\Models\Admin;
 use Spatie\LaravelPackageTools\Package;
 
 final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
 {
-    protected array $resources = [
-        AdminResource::class,
-    ];
-
     public function configurePackage(Package $package): void
     {
         $package
@@ -57,5 +54,13 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
                 buildDirectory: 'vendor/api-console-module',
             );
         });
+    }
+
+    protected function getResources(): array
+    {
+        return [
+            AdminResource::class,
+            RoleResource::class,
+        ];
     }
 }
