@@ -8,7 +8,7 @@ use Filament\Facades\Filament;
 use Filament\PluginServiceProvider;
 use HexDigital\ApiConsoleModule\Actions\RefactorFileAction;
 use HexDigital\ApiConsoleModule\Commands\MakeUserCommand;
-use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as MakeUserCommandAlias;
+use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as FilamentUserCommand;
 use HexDigital\ApiConsoleModule\Commands\PermissionSyncCommand;
 use HexDigital\ApiConsoleModule\Commands\PublishCommand;
 use HexDigital\ApiConsoleModule\Models\Admin;
@@ -44,8 +44,8 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
                 'add_display_name_to_permissions_table',
             ])
             ->hasCommands(commandClassNames: [
+                FilamentUserCommand::class,
                 MakeUserCommand::class,
-                MakeUserCommandAlias::class,
                 PermissionSyncCommand::class,
                 PublishCommand::class,
             ]);
