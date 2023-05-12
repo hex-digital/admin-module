@@ -14,6 +14,7 @@ use HexDigital\ApiConsoleModule\Commands\PublishCommand;
 use HexDigital\ApiConsoleModule\Models\Admin;
 use HexDigital\ApiConsoleModule\Policies\AdminPolicy;
 use HexDigital\ApiConsoleModule\Policies\RolePolicy;
+use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Support\Facades\Gate;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -75,6 +76,8 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
     public function packageBooted(): void
     {
         parent::packageBooted();
+
+        Gate::after(fn (Authorizable $authorizable) => $authorizable instanceof Admin && $authorizable->can(abilities: 'super'));
 
         Filament::serving(callback: function (): void {
             Filament::registerViteTheme(

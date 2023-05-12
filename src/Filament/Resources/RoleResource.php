@@ -10,6 +10,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
 
@@ -39,7 +40,11 @@ class RoleResource extends Resource
 
                             Forms\Components\Select::make(name: 'permissions')
                                 ->multiple()
-                                ->relationship(relationshipName: 'permissions', titleColumnName: 'display_name')
+                                ->relationship(
+                                    relationshipName: 'permissions',
+                                    titleColumnName: 'display_name',
+                                    callback: fn (Builder $query) => $query->where(column: 'name', operator: '<>', value: 'super'),
+                                )
                                 ->preload(),
                         ]),
                 ]),
