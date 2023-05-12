@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Notifications;
+namespace HexDigital\AdminModule\Notifications;
 
-use HexDigital\ApiConsoleModule\Models\Admin;
+use HexDigital\AdminModule\Models\Admin;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-use HexDigital\ApiConsoleModule\Filament\Resources\AdminResource;
-use HexDigital\ApiConsoleModule\Filament\Resources\RoleResource;
-use HexDigital\ApiConsoleModule\Models\Admin;
-use HexDigital\ApiConsoleModule\Policies\AdminPolicy;
-use HexDigital\ApiConsoleModule\Policies\RolePolicy;
+use HexDigital\AdminModule\Filament\Resources\AdminResource;
+use HexDigital\AdminModule\Filament\Resources\RoleResource;
+use HexDigital\AdminModule\Models\Admin;
+use HexDigital\AdminModule\Policies\AdminPolicy;
+use HexDigital\AdminModule\Policies\RolePolicy;
 
 return [
 

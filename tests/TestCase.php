@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Tests;
+namespace HexDigital\AdminModule\Tests;
 
 use Filament\FilamentServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use HexDigital\ApiConsoleModule\ApiConsoleModuleServiceProvider;
+use HexDigital\AdminModule\AdminModuleServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
@@ -16,7 +16,7 @@ abstract class TestCase extends Orchestra
         return [
             LivewireServiceProvider::class,
             FilamentServiceProvider::class,
-            ApiConsoleModuleServiceProvider::class,
+            AdminModuleServiceProvider::class,
         ];
     }
 }

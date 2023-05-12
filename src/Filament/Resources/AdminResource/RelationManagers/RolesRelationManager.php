@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Filament\Resources\AdminResource\RelationManagers;
+namespace HexDigital\AdminModule\Filament\Resources\AdminResource\RelationManagers;
 
 use Filament\Forms\Components\Select;
 use Filament\Resources\Form;
@@ -12,7 +12,7 @@ use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\DetachAction;
 use Filament\Tables\Actions\DetachBulkAction;
 use Filament\Tables\Columns\TextColumn;
-use HexDigital\ApiConsoleModule\Models\Admin;
+use HexDigital\AdminModule\Models\Admin;
 use Illuminate\Contracts\Auth\Guard;
 use Spatie\Permission\Models\Role;
 
@@ -39,7 +39,7 @@ final class RolesRelationManager extends RelationManager
                 Action::make(name: 'attach_role')
                     ->action(action: function (array $data): void {
                         /** @var Guard $guard */
-                        $guard = auth(guard: 'console');
+                        $guard = auth(guard: 'admin');
 
                         /** @var Admin $admin */
                         $admin = $guard->user();

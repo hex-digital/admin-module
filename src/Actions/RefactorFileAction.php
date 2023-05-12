@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Actions;
+namespace HexDigital\AdminModule\Actions;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;

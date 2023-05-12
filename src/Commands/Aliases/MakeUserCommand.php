@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Commands\Aliases;
+namespace HexDigital\AdminModule\Commands\Aliases;
 
-use HexDigital\ApiConsoleModule\Commands\MakeUserCommand as Command;
+use HexDigital\AdminModule\Commands\MakeUserCommand as Command;
 
 final class MakeUserCommand extends Command
 {

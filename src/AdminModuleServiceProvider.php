@@ -2,30 +2,30 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule;
+namespace HexDigital\AdminModule;
 
 use Filament\Facades\Filament;
 use Filament\PluginServiceProvider;
-use HexDigital\ApiConsoleModule\Actions\RefactorFileAction;
-use HexDigital\ApiConsoleModule\Commands\MakeUserCommand;
-use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as FilamentUserCommand;
-use HexDigital\ApiConsoleModule\Commands\PermissionSyncCommand;
-use HexDigital\ApiConsoleModule\Commands\PublishCommand;
-use HexDigital\ApiConsoleModule\Models\Admin;
-use HexDigital\ApiConsoleModule\Policies\AdminPolicy;
-use HexDigital\ApiConsoleModule\Policies\RolePolicy;
+use HexDigital\AdminModule\Actions\RefactorFileAction;
+use HexDigital\AdminModule\Commands\MakeUserCommand;
+use HexDigital\AdminModule\Commands\Aliases\MakeUserCommand as FilamentUserCommand;
+use HexDigital\AdminModule\Commands\PermissionSyncCommand;
+use HexDigital\AdminModule\Commands\PublishCommand;
+use HexDigital\AdminModule\Models\Admin;
+use HexDigital\AdminModule\Policies\AdminPolicy;
+use HexDigital\AdminModule\Policies\RolePolicy;
 use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Support\Facades\Gate;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\Permission\Models\Role;
 
-final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
+final class AdminModuleServiceProvider extends PluginServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name(name: 'api-console-module')
+            ->name(name: 'admin-module')
             ->hasConfigFile()
             ->hasInstallCommand(callable: function (InstallCommand $command): void {
                 $command
@@ -56,10 +56,10 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
         parent::packageRegistered();
 
         config([
-            'auth.guards.console' => array_merge([
+            'auth.guards.admin' => array_merge([
                 'driver' => 'session',
                 'provider' => 'admins',
-            ], (array) config('auth.guards.console', [])),
+            ], (array) config('auth.guards.admin', [])),
             'auth.providers.admins' => array_merge([
                 'driver' => 'eloquent',
                 'model' => Admin::class,
@@ -77,19 +77,19 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
     {
         parent::packageBooted();
 
-        Gate::after(fn (Authorizable $authorizable) => $authorizable instanceof Admin && $authorizable->can(abilities: 'super'));
+        Gate::after(fn (Authorizable $authorizable) => $authorizable instanceof Admin && $authorizable->hasPermissionTo(permission: 'super'));
 
         Filament::serving(callback: function (): void {
             Filament::registerViteTheme(
                 theme: 'resources/css/filament.css',
-                buildDirectory: 'vendor/api-console-module',
+                buildDirectory: 'vendor/admin-module',
             );
         });
     }
 
     protected function getResources(): array
     {
-        return (array) config(key: 'api-console-module.resources', default: []);
+        return (array) config(key: 'admin-module.resources', default: []);
     }
 
     protected function publishDependencies(InstallCommand $command): void
@@ -137,9 +137,7 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
         $refactorFileAction->execute(
             path: config_path('filament.php'),
             refactors: [
-                "'path' => env('FILAMENT_PATH', 'admin')" => "'path' => env('FILAMENT_PATH', 'console')",
-                "'home_url' => '/'" => "'home_url' => '/' . env('FILAMENT_PATH', 'console')",
-                "'guard' => env('FILAMENT_AUTH_GUARD', 'web')" => "'guard' => env('FILAMENT_AUTH_GUARD', 'console')",
+                "'guard' => env('FILAMENT_AUTH_GUARD', 'web')" => "'guard' => env('FILAMENT_AUTH_GUARD', 'admin')",
                 "'login' => \Filament\Http\Livewire\Auth\Login::class" => "'login' => \JeffGreco13\FilamentBreezy\Http\Livewire\Auth\Login::class",
                 "'should_show_logo' => true" => "'should_show_logo' => false",
                 "'width' => null" => "'width' => '18rem'",
@@ -159,8 +157,8 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
     protected function policies(): array
     {
         return [
-            config(key: 'api-console-module.admins.model', default: Admin::class) => config(key: 'api-console-module.admins.policy', default: AdminPolicy::class),
-            config(key: 'permission.models.role', default: Role::class) => config(key: 'api-console-module.roles.policy', default: RolePolicy::class),
+            config(key: 'admin-module.admins.model', default: Admin::class) => config(key: 'admin-module.admins.policy', default: AdminPolicy::class),
+            config(key: 'permission.models.role', default: Role::class) => config(key: 'admin-module.roles.policy', default: RolePolicy::class),
         ];
     }
 }

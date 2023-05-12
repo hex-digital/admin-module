@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Filament\Resources;
+namespace HexDigital\AdminModule\Filament\Resources;
 
-use HexDigital\ApiConsoleModule\Filament\Resources\RoleResource\Pages;
+use HexDigital\AdminModule\Filament\Resources\RoleResource\Pages;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Filament\Resources\AdminResource\Pages;
+namespace HexDigital\AdminModule\Filament\Resources\AdminResource\Pages;
 
-use HexDigital\ApiConsoleModule\Filament\Resources\AdminResource;
+use HexDigital\AdminModule\Filament\Resources\AdminResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\EditRecord;
 
