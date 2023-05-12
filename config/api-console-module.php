@@ -71,7 +71,7 @@ return [
 
     'permissions' => [
         'read:admins' => 'View Admins',
-        'invite:admin' => 'Invite Admins',
+        'invite:admins' => 'Invite Admins',
         'update:admins' => 'Update Admins',
         'delete:admins' => 'Delete Admins',
         'read:roles' => 'View Roles',
