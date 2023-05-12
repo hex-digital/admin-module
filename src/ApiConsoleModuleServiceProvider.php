@@ -9,6 +9,7 @@ use Filament\PluginServiceProvider;
 use HexDigital\ApiConsoleModule\Actions\RefactorFileAction;
 use HexDigital\ApiConsoleModule\Commands\MakeUserCommand;
 use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as MakeUserCommandAlias;
+use HexDigital\ApiConsoleModule\Commands\PermissionSyncCommand;
 use HexDigital\ApiConsoleModule\Models\Admin;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
@@ -32,10 +33,14 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
                     ->askToRunMigrations();
             })
             ->hasAssets()
-            ->hasMigration(migrationFileName: 'create_admins_table')
+            ->hasMigrations(migrationFileNames: [
+                'create_admins_table',
+                'add_display_name_to_permissions_table',
+            ])
             ->hasCommands(commandClassNames: [
                 MakeUserCommand::class,
                 MakeUserCommandAlias::class,
+                PermissionSyncCommand::class,
             ]);
     }
 

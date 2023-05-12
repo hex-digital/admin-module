@@ -52,4 +52,26 @@ return [
         'navigation_group' => null,
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Permissions
+    |--------------------------------------------------------------------------
+    |
+    | These permissions will be created when running the permission:sync
+    | command. Permissions can be assigned to roles via the Role
+    | resource in Filament.
+    |
+    */
+
+    'permissions' => [
+        'read:admins' => 'View Admins',
+        'invite:admin' => 'Invite Admins',
+        'update:admins' => 'Update Admins',
+        'delete:admins' => 'Delete Admins',
+        'read:roles' => 'View Roles',
+        'create:roles' => 'Create Roles',
+        'update:roles' => 'Update Roles',
+        'delete:roles' => 'Delete Roles',
+    ],
+
 ];
