@@ -19,24 +19,33 @@ final class PermissionSyncCommand extends Command
     {
         $permissions = (array) config(key: 'api-console-module.permissions', default: []);
 
+        $this->upsertPermission(name: 'super', displayName: 'Super Admin');
+
         foreach ($permissions as $name => $displayName) {
-            // @phpstan-ignore-next-line - Call to undefined static method updateOrCreate
-            Permission::updateOrCreate(
-                attributes: [
-                    'name' => $name,
-                    'guard_name' => 'console',
-                ],
-                values: [
-                    'display_name' => $displayName,
-                ],
-            );
+            $this->upsertPermission(name: $name, displayName: $displayName);
         }
 
         Permission::query()
+            ->where(column: 'name', operator: '=', value: 'super')
             ->whereNotIn(column: 'name', values: array_keys(array: $permissions))
-            ->where(column: 'guard_name', operator: 'console')
+            ->where(column: 'guard_name', operator: '=', value: 'console')
             ->delete();
 
+        $this->callSilently(command: 'permission:cache-reset');
+
         $this->info(string: 'Permissions successfully synced.');
+    }
+
+    protected function upsertPermission(string $name, string $displayName): Permission
+    {
+        return Permission::updateOrCreate(
+            attributes: [
+                'name' => $name,
+                'guard_name' => 'console',
+            ],
+            values: [
+                'display_name' => $displayName,
+            ],
+        );
     }
 }
