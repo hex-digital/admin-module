@@ -9,6 +9,7 @@ use Filament\PluginServiceProvider;
 use HexDigital\ApiConsoleModule\Actions\RefactorFileAction;
 use HexDigital\ApiConsoleModule\Commands\MakeUserCommand;
 use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as MakeUserCommandAlias;
+use HexDigital\ApiConsoleModule\Commands\PublishCommand;
 use HexDigital\ApiConsoleModule\Models\Admin;
 use HexDigital\ApiConsoleModule\Policies\AdminPolicy;
 use HexDigital\ApiConsoleModule\Policies\RolePolicy;
@@ -40,6 +41,7 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
             ->hasCommands(commandClassNames: [
                 MakeUserCommand::class,
                 MakeUserCommandAlias::class,
+                PublishCommand::class,
             ]);
     }
 
