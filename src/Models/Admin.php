@@ -7,6 +7,7 @@ namespace HexDigital\ApiConsoleModule\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
 /**
@@ -18,6 +19,7 @@ use Spatie\Permission\Traits\HasRoles;
 final class Admin extends Authenticatable
 {
     use HasRoles;
+    use Notifiable;
     use SoftDeletes;
 
     protected $guarded = [];
