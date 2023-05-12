@@ -21,6 +21,10 @@ final class PermissionSyncCommand extends Command
 
         $this->upsertPermission(name: 'super', displayName: 'Super Admin');
 
+        /**
+         * @var string $name
+         * @var string $displayName
+         */
         foreach ($permissions as $name => $displayName) {
             $this->upsertPermission(name: $name, displayName: $displayName);
         }
@@ -38,6 +42,7 @@ final class PermissionSyncCommand extends Command
 
     protected function upsertPermission(string $name, string $displayName): Permission
     {
+        // @phpstan-ignore-next-line - Call to undefined static method updateOrCreate
         return Permission::updateOrCreate(
             attributes: [
                 'name' => $name,
