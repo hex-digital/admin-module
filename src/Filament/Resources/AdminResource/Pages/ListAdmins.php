@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Filament\Resources\AdminResource\Pages;
+namespace HexDigital\AdminModule\Filament\Resources\AdminResource\Pages;
 
 use Filament\Forms\Components\TextInput;
-use HexDigital\ApiConsoleModule\Filament\Resources\AdminResource;
+use HexDigital\AdminModule\Filament\Resources\AdminResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
-use HexDigital\ApiConsoleModule\Models\Admin;
-use HexDigital\ApiConsoleModule\Notifications\InviteAdminNotification;
+use HexDigital\AdminModule\Models\Admin;
+use HexDigital\AdminModule\Notifications\InviteAdminNotification;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -21,7 +21,7 @@ class ListAdmins extends ListRecords
     protected function getActions(): array
     {
         /** @var Guard $guard */
-        $guard = auth(guard: 'console');
+        $guard = auth(guard: 'admin');
 
         /** @var Admin $currentAdmin */
         $currentAdmin = $guard->user();

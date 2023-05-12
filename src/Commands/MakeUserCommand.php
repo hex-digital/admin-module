@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Commands;
+namespace HexDigital\AdminModule\Commands;
 
 use Filament\Commands\MakeUserCommand as Command;
 use Illuminate\Support\Facades\Hash;

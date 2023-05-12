@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Commands;
+namespace HexDigital\AdminModule\Commands;
 
 use Illuminate\Console\Command;
 use Spatie\Permission\Models\Permission;
@@ -17,7 +17,7 @@ final class PermissionSyncCommand extends Command
 
     public function handle(): void
     {
-        $permissions = (array) config(key: 'api-console-module.permissions', default: []);
+        $permissions = (array) config(key: 'admin-module.permissions', default: []);
 
         $this->upsertPermission(name: 'super', displayName: 'Super Admin');
 
@@ -30,9 +30,9 @@ final class PermissionSyncCommand extends Command
         }
 
         Permission::query()
-            ->where(column: 'name', operator: '=', value: 'super')
+            ->where(column: 'name', operator: '<>', value: 'super')
             ->whereNotIn(column: 'name', values: array_keys(array: $permissions))
-            ->where(column: 'guard_name', operator: '=', value: 'console')
+            ->where(column: 'guard_name', operator: '=', value: 'admin')
             ->delete();
 
         $this->callSilently(command: 'permission:cache-reset');
@@ -46,7 +46,7 @@ final class PermissionSyncCommand extends Command
         return Permission::updateOrCreate(
             attributes: [
                 'name' => $name,
-                'guard_name' => 'console',
+                'guard_name' => 'admin',
             ],
             values: [
                 'display_name' => $displayName,

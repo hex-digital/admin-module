@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Models;
+namespace HexDigital\AdminModule\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Foundation\Auth\User as Authenticatable;

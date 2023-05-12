@@ -1,13 +1,13 @@
 {
-    "name": "hex-digital/api-console-module",
-    "description": "Module for providing admin console functionality to our APIs.",
+    "name": "hex-digital/admin-module",
+    "description": "Module for providing admin functionality to our APIs.",
     "license": "MIT",
-    "homepage": "https://github.com/hex-digital/api-console-module",
+    "homepage": "https://github.com/hex-digital/admin-module",
     "type": "library",
     "keywords": [
         "hex-digital",
         "laravel",
-        "api-console-module"
+        "admin-module"
     ],
     "authors": [
         {
@@ -35,12 +35,12 @@
     },
     "autoload": {
         "psr-4": {
-            "HexDigital\\ApiConsoleModule\\": "src/"
+            "HexDigital\\AdminModule\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "HexDigital\\ApiConsoleModule\\Tests\\": "tests/"
+            "HexDigital\\AdminModule\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -57,7 +57,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "HexDigital\\ApiConsoleModule\\ApiConsoleModuleServiceProvider"
+                "HexDigital\\AdminModule\\AdminModuleServiceProvider"
             ]
         }
     },

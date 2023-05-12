@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Filament\Resources;
+namespace HexDigital\AdminModule\Filament\Resources;
 
-use HexDigital\ApiConsoleModule\Filament\Resources\AdminResource\Pages;
+use HexDigital\AdminModule\Filament\Resources\AdminResource\Pages;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use HexDigital\ApiConsoleModule\Filament\Resources\AdminResource\RelationManagers\RolesRelationManager;
-use HexDigital\ApiConsoleModule\Models\Admin;
+use HexDigital\AdminModule\Filament\Resources\AdminResource\RelationManagers\RolesRelationManager;
+use HexDigital\AdminModule\Models\Admin;
 
 class AdminResource extends Resource
 {
@@ -81,7 +81,7 @@ class AdminResource extends Resource
 
     public static function getModel(): string
     {
-        $model = config(key: 'api-console-module.admins.model', default: Admin::class);
+        $model = config(key: 'admin-module.admins.model', default: Admin::class);
 
         if (! is_string(value: $model)) {
             return Admin::class;
@@ -92,7 +92,7 @@ class AdminResource extends Resource
 
     protected static function getNavigationGroup(): ?string
     {
-        $navigationGroup = config(key: 'api-console-module.admins.navigation_group');
+        $navigationGroup = config(key: 'admin-module.admins.navigation_group');
 
         if (! is_string(value: $navigationGroup)) {
             return null;

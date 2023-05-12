@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HexDigital\ApiConsoleModule\Policies;
+namespace HexDigital\AdminModule\Policies;
 
-use HexDigital\ApiConsoleModule\Models\Admin;
+use HexDigital\AdminModule\Models\Admin;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Spatie\Permission\Models\Role;
 
