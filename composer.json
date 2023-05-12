@@ -1,6 +1,6 @@
 {
     "name": "hex-digital/admin-module",
-    "description": "Module for providing admin functionality to our APIs.",
+    "description": "Module for providing core admin functionality to our Laravel projects.",
     "license": "MIT",
     "homepage": "https://github.com/hex-digital/admin-module",
     "type": "library",
