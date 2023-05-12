@@ -1,8 +1,8 @@
 # Admin Module
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/hex-digital/admin-module.svg?style=flat-square)](https://packagist.org/packages/hex-digital/admin-module)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/admin-module/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hex-digital/admin-module/actions/workflows/tests.yaml?query=branch:main)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/admin-module/coding-standards.yml?label=code%20style&style=flat-square)](https://github.com/hex-digital/admin-module/actions/workflows/coding-standards.yml?query=branch:main)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/admin-module/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hex-digital/admin-module/actions/workflows/tests.yaml)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/admin-module/coding-standards.yml?label=code%20style&style=flat-square)](https://github.com/hex-digital/admin-module/actions/workflows/coding-standards.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/hex-digital/admin-module.svg?style=flat-square)](https://packagist.org/packages/hex-digital/admin-module)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
