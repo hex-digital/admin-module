@@ -1,4 +1,4 @@
-# API Console Module
+# Admin Module
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/hex-digital/admin-module.svg?style=flat-square)](https://packagist.org/packages/hex-digital/admin-module)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/hex-digital/admin-module/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/hex-digital/admin-module/actions/workflows/tests.yaml?query=branch:main)
