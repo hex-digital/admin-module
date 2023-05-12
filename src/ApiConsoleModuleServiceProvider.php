@@ -10,9 +10,14 @@ use HexDigital\ApiConsoleModule\Actions\RefactorFileAction;
 use HexDigital\ApiConsoleModule\Commands\MakeUserCommand;
 use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as MakeUserCommandAlias;
 use HexDigital\ApiConsoleModule\Commands\PermissionSyncCommand;
+use HexDigital\ApiConsoleModule\Commands\PublishCommand;
 use HexDigital\ApiConsoleModule\Models\Admin;
+use HexDigital\ApiConsoleModule\Policies\AdminPolicy;
+use HexDigital\ApiConsoleModule\Policies\RolePolicy;
+use Illuminate\Support\Facades\Gate;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\Permission\Models\Role;
 
 final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
 {
@@ -41,6 +46,7 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
                 MakeUserCommand::class,
                 MakeUserCommandAlias::class,
                 PermissionSyncCommand::class,
+                PublishCommand::class,
             ]);
     }
 
@@ -58,6 +64,12 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
                 'model' => Admin::class,
             ], (array) config('auth.providers.admins', [])),
         ]);
+
+        $this->booting(function (): void {
+            foreach ($this->policies() as $model => $policy) {
+                Gate::policy(class: $model, policy: $policy);
+            }
+        });
     }
 
     public function packageBooted(): void
@@ -139,5 +151,13 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
                 '"enable_registration" => true' => '"enable_registration" => false',
             ],
         );
+    }
+
+    protected function policies(): array
+    {
+        return [
+            config(key: 'api-console-module.admins.model', default: Admin::class) => config(key: 'api-console-module.admins.policy', default: AdminPolicy::class),
+            config(key: 'permission.models.role', default: Role::class) => config(key: 'api-console-module.roles.policy', default: RolePolicy::class),
+        ];
     }
 }

@@ -5,6 +5,8 @@ declare(strict_types=1);
 use HexDigital\ApiConsoleModule\Filament\Resources\AdminResource;
 use HexDigital\ApiConsoleModule\Filament\Resources\RoleResource;
 use HexDigital\ApiConsoleModule\Models\Admin;
+use HexDigital\ApiConsoleModule\Policies\AdminPolicy;
+use HexDigital\ApiConsoleModule\Policies\RolePolicy;
 
 return [
 
@@ -36,6 +38,8 @@ return [
     'admins' => [
         'model' => Admin::class,
 
+        'policy' => AdminPolicy::class,
+
         'navigation_group' => null,
     ],
 
@@ -49,6 +53,8 @@ return [
     */
 
     'roles' => [
+        'policy' => RolePolicy::class,
+
         'navigation_group' => null,
     ],
 
