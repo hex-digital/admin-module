@@ -9,6 +9,7 @@ use Filament\PluginServiceProvider;
 use HexDigital\ApiConsoleModule\Actions\RefactorFileAction;
 use HexDigital\ApiConsoleModule\Commands\MakeUserCommand;
 use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as FilamentUserCommand;
+use HexDigital\ApiConsoleModule\Commands\PermissionSyncCommand;
 use HexDigital\ApiConsoleModule\Commands\PublishCommand;
 use HexDigital\ApiConsoleModule\Models\Admin;
 use HexDigital\ApiConsoleModule\Policies\AdminPolicy;
