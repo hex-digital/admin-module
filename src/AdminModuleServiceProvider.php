@@ -77,7 +77,7 @@ final class AdminModuleServiceProvider extends PluginServiceProvider
     {
         parent::packageBooted();
 
-        Gate::after(fn (Authorizable $authorizable) => $authorizable instanceof Admin && $authorizable->can(abilities: 'super'));
+        Gate::after(fn (Authorizable $authorizable) => $authorizable instanceof Admin && $authorizable->hasPermissionTo(permission: 'super'));
 
         Filament::serving(callback: function (): void {
             Filament::registerViteTheme(
