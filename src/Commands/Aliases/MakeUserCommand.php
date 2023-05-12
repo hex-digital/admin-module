@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace HexDigital\ApiConsoleModule\Commands\Aliases;
 
-use HexDigital\ApiConsoleModule\Commands;
+use HexDigital\ApiConsoleModule\Commands\MakeUserCommand as Command;
 
-class MakeUserCommand extends Commands\MakeUserCommand
+final class MakeUserCommand extends Command
 {
     protected $hidden = true;
 

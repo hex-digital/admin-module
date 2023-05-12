@@ -8,7 +8,7 @@ use Filament\Facades\Filament;
 use Filament\PluginServiceProvider;
 use HexDigital\ApiConsoleModule\Actions\RefactorFileAction;
 use HexDigital\ApiConsoleModule\Commands\MakeUserCommand;
-use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as MakeUserCommandAlias;
+use HexDigital\ApiConsoleModule\Commands\Aliases\MakeUserCommand as FilamentUserCommand;
 use HexDigital\ApiConsoleModule\Commands\PublishCommand;
 use HexDigital\ApiConsoleModule\Models\Admin;
 use HexDigital\ApiConsoleModule\Policies\AdminPolicy;
@@ -39,8 +39,8 @@ final class ApiConsoleModuleServiceProvider extends PluginServiceProvider
             ->hasAssets()
             ->hasMigration(migrationFileName: 'create_admins_table')
             ->hasCommands(commandClassNames: [
+                FilamentUserCommand::class,
                 MakeUserCommand::class,
-                MakeUserCommandAlias::class,
                 PublishCommand::class,
             ]);
     }

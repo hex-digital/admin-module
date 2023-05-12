@@ -4,21 +4,11 @@ declare(strict_types=1);
 
 namespace HexDigital\ApiConsoleModule\Commands;
 
-use Filament\Commands\MakeUserCommand as FilamentMakeUserCommand;
+use Filament\Commands\MakeUserCommand as Command;
 use Illuminate\Support\Facades\Hash;
-use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand(name: 'make:filament-user')]
-class MakeUserCommand extends FilamentMakeUserCommand
+class MakeUserCommand extends Command
 {
-    protected $description = 'Creates a Filament user.';
-
-    protected $signature = 'make:filament-user
-                            {--firstname= : The first name of the user}
-                            {--lastname= : The last name of the user}
-                            {--email= : A valid and unique email address}
-                            {--password= : The password for the user (min. 8 characters)}';
-
     protected function getUserData(): array
     {
         return [
