@@ -39,7 +39,8 @@ class RoleResource extends Resource
 
                             Forms\Components\Select::make(name: 'permissions')
                                 ->multiple()
-                                ->relationship(relationshipName: 'permissions', titleColumnName: 'name'),
+                                ->relationship(relationshipName: 'permissions', titleColumnName: 'display_name')
+                                ->preload(),
                         ]),
                 ]),
             ]);

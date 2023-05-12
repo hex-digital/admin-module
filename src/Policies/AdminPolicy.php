@@ -13,32 +13,32 @@ class AdminPolicy
 
     public function viewAny(Admin $admin): bool
     {
-        return true;
+        return $admin->can(abilities: 'read:admins');
     }
 
     public function view(Admin $admin, Admin $model): bool
     {
-        return true;
+        return $admin->can(abilities: 'read:admins');
     }
 
     public function create(Admin $admin): bool
     {
-        return true;
+        return false;
     }
 
     public function update(Admin $admin, Admin $model): bool
     {
-        return $admin->isNot(model: $model);
+        return $admin->can(abilities: 'update:admins') && $admin->isNot(model: $model);
     }
 
     public function delete(Admin $admin, Admin $model): bool
     {
-        return $admin->isNot(model: $model);
+        return $admin->can(abilities: 'delete:admins') && $admin->isNot(model: $model);
     }
 
     public function restore(Admin $admin, Admin $model): bool
     {
-        return true;
+        return $admin->can(abilities: 'invite:admins');
     }
 
     public function forceDelete(Admin $admin, Admin $model): bool
