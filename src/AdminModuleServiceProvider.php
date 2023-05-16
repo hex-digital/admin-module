@@ -20,7 +20,7 @@ use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\Permission\Models\Role;
 
-final class AdminModuleServiceProvider extends PluginServiceProvider
+class AdminModuleServiceProvider extends PluginServiceProvider
 {
     public function configurePackage(Package $package): void
     {

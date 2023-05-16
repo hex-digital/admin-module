@@ -6,7 +6,7 @@ namespace HexDigital\AdminModule\Commands\Aliases;
 
 use HexDigital\AdminModule\Commands\MakeUserCommand as Command;
 
-final class MakeUserCommand extends Command
+class MakeUserCommand extends Command
 {
     protected $hidden = true;
 

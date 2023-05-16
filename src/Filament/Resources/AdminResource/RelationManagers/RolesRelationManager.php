@@ -16,7 +16,7 @@ use HexDigital\AdminModule\Models\Admin;
 use Illuminate\Contracts\Auth\Guard;
 use Spatie\Permission\Models\Role;
 
-final class RolesRelationManager extends RelationManager
+class RolesRelationManager extends RelationManager
 {
     protected static string $relationship = 'roles';
 

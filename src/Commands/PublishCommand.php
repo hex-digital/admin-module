@@ -11,7 +11,7 @@ use SplFileInfo;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'admin-module:publish')]
-final class PublishCommand extends Command
+class PublishCommand extends Command
 {
     protected $signature = 'admin-module:publish {--force : Overwrite any existing files}';
 

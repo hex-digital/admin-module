@@ -7,7 +7,7 @@ namespace HexDigital\AdminModule\Actions;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 
-final class RefactorFileAction
+class RefactorFileAction
 {
     public function __construct(
         protected Filesystem $files,
