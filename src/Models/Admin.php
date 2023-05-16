@@ -16,7 +16,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string $last_name
  * @property string $email
  */
-final class Admin extends Authenticatable
+class Admin extends Authenticatable
 {
     use HasRoles;
     use Notifiable;

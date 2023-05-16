@@ -9,7 +9,7 @@ use Spatie\Permission\Models\Permission;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'permission:sync')]
-final class PermissionSyncCommand extends Command
+class PermissionSyncCommand extends Command
 {
     protected $signature = 'permission:sync';
 
