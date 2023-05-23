@@ -861,16 +861,16 @@
         },
         {
             "name": "filament/filament",
-            "version": "v2.17.38",
+            "version": "v2.17.43",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/app.git",
-                "reference": "0719a1fcebcad120dd4e254938cfb08470c90105"
+                "reference": "d3e067e44b981f8212740ad32e9c8d733e562b2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/app/zipball/0719a1fcebcad120dd4e254938cfb08470c90105",
-                "reference": "0719a1fcebcad120dd4e254938cfb08470c90105",
+                "url": "https://api.github.com/repos/filamentphp/app/zipball/d3e067e44b981f8212740ad32e9c8d733e562b2c",
+                "reference": "d3e067e44b981f8212740ad32e9c8d733e562b2c",
                 "shasum": ""
             },
             "require": {
@@ -920,20 +920,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-08T15:39:08+00:00"
+            "time": "2023-05-22T21:18:35+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v2.17.38",
+            "version": "v2.17.43",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/forms.git",
-                "reference": "49bafbf87f0d7f23e7b62a6d40591fd3ea81a55b"
+                "reference": "a8acd3681f2b2163d6cad3478a5fe14489d53217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/forms/zipball/49bafbf87f0d7f23e7b62a6d40591fd3ea81a55b",
-                "reference": "49bafbf87f0d7f23e7b62a6d40591fd3ea81a55b",
+                "url": "https://api.github.com/repos/filamentphp/forms/zipball/a8acd3681f2b2163d6cad3478a5fe14489d53217",
+                "reference": "a8acd3681f2b2163d6cad3478a5fe14489d53217",
                 "shasum": ""
             },
             "require": {
@@ -978,11 +978,11 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-08T09:55:16+00:00"
+            "time": "2023-05-22T21:18:31+00:00"
         },
         {
             "name": "filament/notifications",
-            "version": "v2.17.38",
+            "version": "v2.17.43",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/notifications.git",
@@ -1035,16 +1035,16 @@
         },
         {
             "name": "filament/support",
-            "version": "v2.17.38",
+            "version": "v2.17.43",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/support.git",
-                "reference": "1a411197122524886c81a74c7044258d64d56308"
+                "reference": "1e03d08cb6df27fd64e658b5316fd34f81554a8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/support/zipball/1a411197122524886c81a74c7044258d64d56308",
-                "reference": "1a411197122524886c81a74c7044258d64d56308",
+                "url": "https://api.github.com/repos/filamentphp/support/zipball/1e03d08cb6df27fd64e658b5316fd34f81554a8d",
+                "reference": "1e03d08cb6df27fd64e658b5316fd34f81554a8d",
                 "shasum": ""
             },
             "require": {
@@ -1081,20 +1081,20 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-04T23:08:15+00:00"
+            "time": "2023-05-22T21:18:29+00:00"
         },
         {
             "name": "filament/tables",
-            "version": "v2.17.38",
+            "version": "v2.17.43",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filamentphp/tables.git",
-                "reference": "b23b5cc95c7b1afb650b366545942b1ccad993af"
+                "reference": "1a57eac2388d2336c66dedf840b20a6b66a9b127"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filamentphp/tables/zipball/b23b5cc95c7b1afb650b366545942b1ccad993af",
-                "reference": "b23b5cc95c7b1afb650b366545942b1ccad993af",
+                "url": "https://api.github.com/repos/filamentphp/tables/zipball/1a57eac2388d2336c66dedf840b20a6b66a9b127",
+                "reference": "1a57eac2388d2336c66dedf840b20a6b66a9b127",
                 "shasum": ""
             },
             "require": {
@@ -1137,7 +1137,7 @@
                 "issues": "https://github.com/filamentphp/filament/issues",
                 "source": "https://github.com/filamentphp/filament"
             },
-            "time": "2023-05-08T09:55:33+00:00"
+            "time": "2023-05-22T21:18:35+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -7726,22 +7726,23 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.20.4",
+            "version": "1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd"
+                "reference": "6df62b08faef4f899772bc7c3bbabb93d2b7a21c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd",
-                "reference": "7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/6df62b08faef4f899772bc7c3bbabb93d2b7a21c",
+                "reference": "6df62b08faef4f899772bc7c3bbabb93d2b7a21c",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
+                "nikic/php-parser": "^4.15",
                 "php-parallel-lint/php-parallel-lint": "^1.2",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^1.5",
@@ -7765,9 +7766,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.20.4"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.21.0"
             },
-            "time": "2023-05-02T09:19:37+00:00"
+            "time": "2023-05-17T13:13:44+00:00"
         },
         {
             "name": "phpstan/phpstan",
